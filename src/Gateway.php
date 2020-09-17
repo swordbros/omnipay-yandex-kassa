@@ -77,6 +77,7 @@ class Gateway extends AbstractGateway
      */
     public function purchase(array $parameters = [])
     {
+        $parameters['capture'] = 1;
         return $this->createRequest(PurchaseRequest::class, $this->injectYandexClient($parameters));
     }
 
